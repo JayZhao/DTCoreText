@@ -69,9 +69,14 @@
 		// block-level elements get space trimmed and a newline
 		if (self.displayStyle != DTHTMLElementDisplayStyleInline)
 		{
-			[tmpString appendString:@"\n"];
+			if (![tmpString.string hasSuffix:@"\n"]) {
+				[tmpString appendString:@"\n"];
+			}
 		}
-		
+		if (_textAttachment && CGSizeEqualToSize(_textAttachment.displaySize, CGSizeZero)) {
+			NSLog(@"Filtered:%@", _textAttachment);
+			return nil;
+		}
 		return tmpString;
 	}
 }

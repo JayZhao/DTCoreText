@@ -793,6 +793,16 @@
 		{
 			tagBlock();
 		}
+		if ([_currentTag.name isEqualToString:@"video"] || [_currentTag.name isEqualToString:@"iframe"]) {
+			if (self.fixVideoCallBack) {
+				self.fixVideoCallBack(_currentTag);
+			}
+		}
+		if ([_currentTag.name isEqualToString:@"img"]) {
+			if (self.fixImageSizeCallback) {
+				self.fixImageSizeCallback(_currentTag);
+			}
+		}
 	});
 }
 
@@ -847,7 +857,9 @@
 											[_tmpString deleteCharactersInRange:NSMakeRange([_tmpString length]-1, 1)];
 										}
 										
-										[_tmpString appendString:@"\n"];
+										if (![_tmpString.string hasSuffix:@"\n"]) {
+											[_tmpString appendString:@"\n"];
+										}
 									}
 								}
 								

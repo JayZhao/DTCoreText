@@ -22,14 +22,19 @@
 		// get base URL
 		NSURL *baseURL = [options objectForKey:NSBaseURLDocumentOption];
 		NSString *src = [element.attributes objectForKey:@"src"];
-		
-		// prepend http: if URL string starts with // (seems to do with youtube iframes as standard)
-		if ([[src substringToIndex:2] isEqualToString:@"//"]) {
-			src = [@"http:" stringByAppendingString:src];
+		if (src.length > 3) {
+			// prepend http: if URL string starts with // (seems to do with youtube iframes as standard)
+			
+			if ([[src substringToIndex:2] isEqualToString:@"//"]) {
+				src = [@"http:" stringByAppendingString:src];
+			}
+			
+			// content URL
+			_contentURL = [NSURL URLWithString:src relativeToURL:baseURL];
 		}
-		
-		// content URL
-		_contentURL = [NSURL URLWithString:src relativeToURL:baseURL];
+		else {
+			return nil;
+		}
 	}
 	
 	return self;

@@ -472,7 +472,9 @@ NSDictionary *_classesForNames = nil;
 						}
 						
 						// paragraph break
-						[tmpString appendString:@"\n"];
+						if (![tmpString.string hasSuffix:@"\n"]) {
+							[tmpString appendString:@"\n"];
+						}
 					}
 				}
 				

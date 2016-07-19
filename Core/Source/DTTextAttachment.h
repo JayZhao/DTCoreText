@@ -194,4 +194,7 @@ typedef NS_ENUM(NSUInteger, DTTextAttachmentVerticalAlignment)
  */
 + (Class)registeredClassForTagName:(NSString *)tagName;
 
+@property (nonatomic, assign) BOOL wantSingleLine;
+@property (nonatomic, strong) NSString* imageTitle;
+
 @end

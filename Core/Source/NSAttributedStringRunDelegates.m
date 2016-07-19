@@ -49,5 +49,4 @@ CTRunDelegateRef createEmbeddedObjectRunDelegate(id obj)
 	callbacks.getDescent = embeddedObjectGetDescentCallback;
 	callbacks.getWidth = embeddedObjectGetWidthCallback;
 	return CTRunDelegateCreate(&callbacks, (__bridge void *)obj);
-	return NULL;
 }

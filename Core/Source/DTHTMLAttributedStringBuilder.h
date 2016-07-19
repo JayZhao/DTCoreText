@@ -71,7 +71,8 @@ typedef void(^DTHTMLAttributedStringBuilderWillFlushCallback)(DTHTMLElement *);
  This block is called before the element is written to the output attributed string
  */
 @property (nonatomic, copy) DTHTMLAttributedStringBuilderWillFlushCallback willFlushCallback;
-
+@property (nonatomic, copy) DTHTMLAttributedStringBuilderWillFlushCallback fixImageSizeCallback;
+@property (nonatomic, copy) DTHTMLAttributedStringBuilderWillFlushCallback fixVideoCallBack;
 /**
  Setting this property to `YES` causes the tree of parse nodes to be preserved until the end of the generation process. This allows to output the HTML structure of the document for debugging.
  */
