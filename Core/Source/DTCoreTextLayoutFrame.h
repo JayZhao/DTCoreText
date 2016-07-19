@@ -375,5 +375,8 @@ typedef NS_ENUM(NSUInteger, DTCoreTextLayoutFrameDrawingOptions)
  */
 @property(nonatomic, strong)NSAttributedString *truncationString;
 
+@property (nonatomic) BOOL trimLastLine;
+@property (nonatomic) BOOL usedAsTeaser;
+@property (nonatomic, strong) dispatch_queue_t textFrameBornQueue;
 
 @end
