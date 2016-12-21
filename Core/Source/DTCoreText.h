@@ -62,12 +62,12 @@
 #import "DTObjectTextAttachment.h"
 #import "DTVideoTextAttachment.h"
 
-// These classes only work with UIKit on iOS
+// TARGET_OS_IPHONE is both tvOS and iOS
 #if TARGET_OS_IPHONE
 
 #import "DTLazyImageView.h"
 #import "DTLinkButton.h"
-#import "DTWebVideoView.h"
+
 #import "NSAttributedStringRunDelegates.h"
 
 #import "DTAttributedLabel.h"
