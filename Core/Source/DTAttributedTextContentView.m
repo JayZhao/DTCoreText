@@ -500,9 +500,6 @@ static Class _layerClassToUseForDTAttributedTextContentView = nil;
 		// Make sure we actually have a superview and a previous layout before attempting to relayout the text.
 		if (_layoutFrame && self.superview)
 		{
-			// need new layout frame, layouter can remain because the attributed string is probably the same
-			self.layoutFrame = nil;
-			
 			// remove all links because they might have merged or split
 			[self removeAllCustomViewsForLinks];
 			
